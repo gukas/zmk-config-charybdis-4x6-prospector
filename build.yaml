@@ -19,8 +19,10 @@
 ---
 include:
   - board: seeeduino_xiao_ble
-    shield: charybdis_dongle prospector_adapter
-    snippet: studio-rpc-usb-uart
+    shield: charybdis_dongle dongle_screen
+    #cmake-args: -DCONFIG_LOG_PROCESS_THREAD_STARTUP_DELAY_MS=8000 #optional if logging is enabled
+    #snippet: zmk-usb-logging #only enable for debugging
+    artifact-name: dongle-screen
     cmake-args: -DCONFIG_ZMK_STUDIO=n
 
   - board: nice_nano_v2
