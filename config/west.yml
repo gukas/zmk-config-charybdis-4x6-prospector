@@ -16,6 +16,6 @@ manifest:
       revision: zmk-0.4
     - name: zmk-dongle-screen
       remote: janpfischer
-      revision: tree/upgrade-4.1
+      revision: upgrade-4.1
   self:
     path: config
