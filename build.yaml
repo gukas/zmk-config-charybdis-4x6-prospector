@@ -19,7 +19,7 @@
 ---
 include:
   - board: xiao_ble
-    shield: charybdis_dongle prospector_adapter
+    shield: charybdis_dongle dongle_screen
 
   - board: nice_nano
     shield: charybdis_left
