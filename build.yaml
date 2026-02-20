@@ -19,7 +19,8 @@
 ---
 include:
   - board: xiao_ble
-    shield: charybdis_dongle dongle_screen
+    shield: charybdis dongle_screen
+    artifact-name: dongle-screen
 
   - board: nice_nano
     shield: charybdis_left
