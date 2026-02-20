@@ -4,8 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: badjeff
       url-base: https://github.com/badjeff
-    - name: carrefinho
-      url-base: https://github.com/carrefinho
+    - name: janpfischer
+      url-base: https://github.com/janpfischer
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -14,8 +14,8 @@ manifest:
     - name: zmk-pmw3610-driver
       remote: badjeff
       revision: zmk-0.4
-    - name: prospector-zmk-module
-      remote: carrefinho
-      revision: core/zephyr-4-1
+    - name: zmk-dongle-screen
+      remote: janpfischer
+      revision: tree/upgrade-4.1
   self:
     path: config
