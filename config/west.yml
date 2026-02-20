@@ -16,6 +16,6 @@ manifest:
       revision: zmk-0.4
     - name: prospector-zmk-module
       remote: carrefinho
-      revision: core/zephyr-4-1
+      revision: feat/new-status-screens
   self:
     path: config
