@@ -84,30 +84,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        hml_s: hml_s {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <2000>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <0>;
-            hold-trigger-key-positions = <KEYS_R THUMBS>;
-            hold-trigger-on-release;
-            bindings = <&kp>, <&kp>;
-        };
-
-        hmr_s: hmr_s {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "balanced";
-            tapping-term-ms = <2000>;
-            quick-tap-ms = <175>;
-            require-prior-idle-ms = <0>;
-            hold-trigger-key-positions = <KEYS_L THUMBS>;
-            hold-trigger-on-release;
-            bindings = <&kp>, <&kp>;
-        };
-
         smart_shift: smart_shift {
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
@@ -128,21 +104,6 @@
 
     combos {
         compatible = "zmk,combos";
-
-        LeftClickRight {
-            bindings = <&mkp LCLK>;
-            key-positions = <19 20>;
-        };
-
-        RightClickRight {
-            bindings = <&mkp RCLK>;
-            key-positions = <20 21>;
-        };
-
-        MiddleClickRight {
-            bindings = <&mkp MCLK>;
-            key-positions = <21 22>;
-        };
 
         ParaLeft {
             bindings = <&kp LEFT_PARENTHESIS>;
@@ -174,11 +135,6 @@
             key-positions = <9 21>;
         };
 
-        Delete {
-            bindings = <&kp DELETE>;
-            key-positions = <8 9>;
-        };
-
         CapsWord {
             bindings = <&caps_word>;
             key-positions = <27 28 31 32>;
@@ -186,7 +142,7 @@
 
         MiddleClick {
             bindings = <&mkp MCLK>;
-            key-positions = <49 52>;
+            key-positions = <50 51>;
         };
     };
 
@@ -198,24 +154,24 @@
         BASE {
             display-name = "BASE";
             bindings = <
-&kp ESC         &kp LS(NUMBER_1)  &kp LS(N2)  &kp LS(N3)          &kp LS(N4)     &kp LS(N5)      &kp LS(N6)  &kp LS(N7)    &kp LS(N8)           &kp LS(N9)  &kp LS(N0)  &kp BACKSPACE
-&kp GRAVE       &kp Q             &kp W       &kp E               &kp R          &kp T           &kp Y       &kp U         &kp I                &kp O       &kp P       &kp LEFT_BRACKET
-&kp TAB         &kp A             &kp S       &u_mt LEFT_SHIFT D  &kp F          &kp G           &kp H       &kp J         &u_mt RIGHT_SHIFT K  &kp L       &kp SEMI    &kp APOS
-&kp LEFT_SHIFT  &kp Z             &kp X       &kp C               &kp V          &kp B           &kp N       &kp M         &kp COMMA            &kp DOT     &kp FSLH    &u_mt RIGHT_SHIFT RIGHT_BRACKET
-                                              &mkp MB3            &u_lt 5 SPACE  &mo 1           &kp LCTRL   &kp LEFT_WIN
-                                                                  &mo 2          &kp LEFT_ALT    &kp ENTER
+&kp ESC                      &kp NUMBER_1  &kp N2  &kp N3             &kp N4          &kp N5           &kp N6         &kp N7     &kp N8              &kp N9   &kp N0    &kp BACKSPACE
+&hml LEFT_WIN RIGHT_BRACKET  &kp Q         &kp W   &kp E              &kp R           &kp T            &kp Y          &kp U      &kp I               &kp O    &kp P     &hmr RIGHT_WIN LEFT_BRACKET
+&hmr LEFT_ALT GRAVE          &kp A         &kp S   &hml LEFT_SHIFT D  &kp F           &kp G            &kp H          &kp J      &hmr RIGHT_SHIFT K  &kp L    &kp SEMI  &hmr RIGHT_ALT SINGLE_QUOTE
+&hml LCTRL BACKSLASH         &kp Z         &kp X   &kp C              &kp V           &kp B            &kp N          &kp M      &kp COMMA           &kp DOT  &kp FSLH  &hmr RCTRL MINUS
+                                                   &kp TAB            &u_lt 5 SPACE   &u_lt 1 ENTER    &mkp RCLK      &mkp LCLK
+                                                                      &u_lt 2 ESCAPE  &kp DELETE       &kp BACKSPACE
             >;
         };
 
         NAVNUM {
             display-name = "NAVNUM";
             bindings = <
-&kp F12  &kp F1  &kp F2        &kp F3        &kp F4         &kp F5        &kp F6           &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
-&none    &none   &kp HOME      &kp UP        &kp END        &kp INSERT    &kp PAGE_UP      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &none
-&none    &none   &kp LEFT      &kp DOWN      &kp RIGHT      &kp ENTER     &kp PAGE_DOWN    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0  &none
-&none    &none   &kp LC(LEFT)  &kp CAPSLOCK  &kp LC(RIGHT)  &kp DELETE    &kp PRINTSCREEN  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
-                               &trans        &trans         &trans        &trans           &trans
-                                             &mo 3          &trans        &trans
+&kp F12  &kp F1        &kp F2        &kp F3    &kp F4         &kp F5        &kp F6           &kp F7        &kp F8        &kp F9        &kp F10       &kp F11
+&none    &kp CAPSLOCK  &kp HOME      &kp UP    &kp END        &kp INSERT    &kp PAGE_UP      &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &none         &none
+&none    &none         &kp LEFT      &kp DOWN  &kp RIGHT      &kp ENTER     &kp PAGE_DOWN    &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_0  &none
+&none    &none         &kp LC(LEFT)  &none     &kp LC(RIGHT)  &kp DELETE    &kp PRINTSCREEN  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &none         &none
+                                     &trans    &trans         &trans        &trans           &trans
+                                               &mo 3          &trans        &trans
             >;
         };
 
@@ -246,12 +202,12 @@
         MOUSE {
             display-name = "MOUSE";
             bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &mkp RCLK  &mkp LCLK  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans     &trans     &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans     &trans     &trans    &trans  &trans
-                                   &trans     &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans
+                                &trans  &trans    &trans
             >;
         };
 
